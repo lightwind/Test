@@ -160,6 +160,7 @@ export default {
             padding: 0;
             margin: 0;
             position: relative;
+            background: #F2F2F2;
   }
   .box-box60 li{
     border: 1px solid #000;
@@ -187,6 +188,7 @@ export default {
             padding: 0;
             margin: 0;
             position: relative;
+            background: #F2F2F2;
   }
   .box-box44 li{
     border: 1px solid #000;

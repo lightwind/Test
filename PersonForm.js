@@ -21,7 +21,7 @@ import { Modal } from 'ant-design-vue'
 // import the component
 import Treeselect from '@riophae/vue-treeselect'
 // import the styles
-import {dbNumberToShowNumber} from '@utils/LockNumberTranfer.js';
+import {dbNumberToShowNumber} from '@/utils/pt/LockNumberTranfer.js';
 import '@riophae/vue-treeselect/dist/vue-treeselect.css'
 export default {
   name: 'PersonForm',
