@@ -220,11 +220,13 @@ export default {
             response.data[0].data.splice(6, 0, { type: 1 })
             response.data[0].data.splice(7, 0, { type: 1 })
           }
-          if (this.form.plantAreaId == fcde8e7484734219be39c44ae6570f5a) {
+          if (this.form.plantAreaId == 'fcde8e7484734219be39c44ae6570f5a') {
             // 当选择的厂区是北京的时候
             // 此时ABC均有，所以把三个总数加一起得到箱子总数
+            console.log('是北京厂区');
             let countByCab = response.data[0].data.length + response.data[1].data.length +response.data[2].data.length
             if(countByCab ===44){
+              console.log('是44');
               response.data[0].data.forEach(function(item, index) {
                 item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
               });
@@ -240,7 +242,10 @@ export default {
               this.boxnumList = this.boxnumList1.concat(this.boxnumList, this.boxnumList2);
               this.boxnumList1 = []
               this.boxnumList2 = []
+              console.log(this.boxnumList1, 'this.boxnumList1');
+              console.log(this.boxnumList2, 'this.boxnumList2');
             }else if(countByCab ===60){
+              console.log('是60');
               response.data[0].data.forEach(function(item, index) {
                 item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
               });
@@ -256,19 +261,25 @@ export default {
               this.boxnumList = this.boxnumList1.concat(this.boxnumList, this.boxnumList2);
               this.boxnumList1 = []
               this.boxnumList2 = []
+              console.log(this.boxnumList1, 'this.boxnumList1');
+              console.log(this.boxnumList2, 'this.boxnumList2');
             }else{
-              response.data[0].data.forEach(function(item, index) {
-                item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
-              });
-              response.data[1].data.forEach(function(item, index) {
-                item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
-              });
-              response.data[2].data.forEach(function(item, index) {
-                item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
-              });
-              // dbNumberToShowNumber()
+              // response.data[0].data.forEach(function(item, index) {
+              //   item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
+              // });
+              // response.data[1].data.forEach(function(item, index) {
+              //   item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
+              // });
+              // response.data[2].data.forEach(function(item, index) {
+              //   item.changeShowNum = dbNumberToShowNumber(item.showNum,countByCab)
+              // });
+              // // dbNumberToShowNumber()
+              // this.boxnumList = response.data[0].data
+              // this.boxnumList1 = response.data[1].data
+              // this.boxnumList2 = response.data[2].data
+			  console.log('非60和 44');
               this.boxnumList = response.data[0].data
-              this.boxnumList1 = response.data[1].data
+			  this.boxnumList1 = response.data[1].data
               this.boxnumList2 = response.data[2].data
             }
             
